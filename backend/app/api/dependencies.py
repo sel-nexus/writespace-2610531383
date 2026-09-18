@@ -53,3 +53,20 @@ def get_current_user(
     if user is None or not user.is_active:
         raise HTTPException(401, detail={"code": "ACCOUNT_INACTIVE", "message": "Authentication required."})
     return user
+
+
+def require_admin(user: Annotated[User, Depends(get_current_user)]) -> User:
+    """Require the active persisted account to hold the administrator role.
+
+    Args:
+        user: Active account already resolved from the bearer credential.
+
+    Returns:
+        The same active administrator account.
+
+    Raises:
+        HTTPException: If the active account is not an administrator.
+    """
+    if user.role != "admin":
+        raise HTTPException(403, detail={"code": "ADMIN_REQUIRED", "message": "Administrator access required."})
+    return user

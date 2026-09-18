@@ -411,6 +411,89 @@ a:focus-visible {
   font-size: 2rem;
 }
 
+.admin-shell {
+  gap: 2.5rem;
+}
+
+.admin-heading {
+  padding-top: 2.5rem;
+}
+
+.admin-heading h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+}
+
+.admin-stats,
+.admin-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-stats article,
+.admin-users {
+  padding: 1.25rem;
+  border: 1px solid #d9c7b3;
+  background: #fffaf3;
+}
+
+.admin-stats span,
+.user-list span {
+  display: block;
+  color: #715e4e;
+  font-size: 0.78rem;
+}
+
+.admin-stats strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 2rem;
+}
+
+.admin-grid {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+}
+
+.admin-users h2,
+.editor-card h2 {
+  margin-top: 0;
+  font-family: 'Fraunces', serif;
+}
+
+.user-list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #d9c7b3;
+}
+
+.user-list strong {
+  display: block;
+}
+
+.post-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #cdbba6;
+  border-radius: 0.4rem;
+  background: #fffdf9;
+  color: #30251e;
+  font: inherit;
+}
+
 @media (max-width: 560px) {
   .page-shell {
     padding-inline: 1.25rem;
@@ -430,7 +513,9 @@ a:focus-visible {
     flex-direction: column;
   }
 
-  .post-grid {
+  .post-grid,
+  .admin-stats,
+  .admin-grid {
     grid-template-columns: 1fr;
   }
 

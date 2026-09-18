@@ -107,3 +107,34 @@ export async function deletePost(id, token) {
     throw new ApiError(envelope?.message || 'Request failed.', response.status);
   }
 }
+
+/** Read administrator-only workspace statistics with a bearer token. */
+export function getAdminStats(token) {
+  return requestJson('/api/admin/stats', { token });
+}
+
+/** List administrator-safe profiles with a bearer token. */
+export function getUsers(token) {
+  return requestJson('/api/users', { token });
+}
+
+/** Create an account as an administrator using a bearer token. */
+export function createUser(account, token) {
+  return requestJson('/api/users', { method: 'POST', body: account, token });
+}
+
+/** Delete an eligible account as an administrator using a bearer token. */
+export async function deleteUser(id, token) {
+  const baseUrl = import.meta.env.VITE_API_URL ?? '';
+  let response;
+  try {
+    response = await fetch(`${baseUrl}/api/users/${encodeURIComponent(id)}`, { headers: { Accept: 'application/json', Authorization: `Bearer ${token}` }, method: 'DELETE' });
+  } catch {
+    throw new ApiError('Unable to reach WriteSpace.', 0);
+  }
+  if (!response.ok) {
+    const payload = await response.json().catch(() => ({}));
+    const envelope = typeof payload.error === 'object' && payload.error ? payload.error : null;
+    throw new ApiError(envelope?.message || 'Request failed.', response.status);
+  }
+}
