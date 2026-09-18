@@ -23,3 +23,6 @@ test_report.yaml
 graphify-out/cache/
 graphify-out/graphify-out/cache/
 graphify-out/cost.json
+
+# Private production runtime inputs
+.env.prod
