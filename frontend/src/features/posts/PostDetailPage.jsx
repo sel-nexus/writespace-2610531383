@@ -19,8 +19,14 @@ export default function PostDetailPage() {
   useEffect(() => {
     setPhase('loading');
     getPost(id, token)
-      .then((response) => { setPost(response); setPhase('ready'); })
-      .catch((requestError) => { setError(requestError.message || 'Unable to load this post.'); setPhase('error'); });
+      .then((response) => {
+        setPost(response);
+        setPhase('ready');
+      })
+      .catch((requestError) => {
+        setError(requestError.message || 'Unable to load this post.');
+        setPhase('error');
+      });
   }, [id, token]);
 
   const canMutate = post && (profile.role === 'admin' || profile.id === post.author_id);
@@ -43,7 +49,14 @@ export default function PostDetailPage() {
 
   return (
     <main className="page-shell post-detail-shell">
-      <nav className="masthead" aria-label="WriteSpace"><Link className="wordmark" to="/">Write<span>Space</span></Link><Link className="text-button" to="/blogs">All posts</Link></nav>
+      <nav className="masthead" aria-label="WriteSpace">
+        <Link className="wordmark" to="/">
+          Write<span>Space</span>
+        </Link>
+        <Link className="text-button" to="/blogs">
+          All posts
+        </Link>
+      </nav>
       {phase === 'loading' && <p className="resource-status" role="status">Opening the note…</p>}
       {phase === 'error' && <p className="resource-status resource-error" role="alert">{error}</p>}
       {phase === 'ready' && post && (
@@ -53,21 +66,35 @@ export default function PostDetailPage() {
           <div className="post-content">{post.content}</div>
           {canMutate && (
             <div className="post-actions">
-              <Link className="secondary-button" to={`/posts/${post.id}/edit`}>Edit post</Link>
-              <button ref={deleteTrigger} className="danger-button" type="button" onClick={() => setConfirming(true)}>Delete post</button>
+              <Link className="secondary-button" to={`/posts/${post.id}/edit`}>
+                Edit post
+              </Link>
+              <button ref={deleteTrigger} className="danger-button" type="button" onClick={() => setConfirming(true)}>
+                Delete post
+              </button>
             </div>
           )}
         </article>
       )}
       {confirming && (
         <div className="dialog-backdrop" onMouseDown={closeDialog}>
-          <section className="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="delete-title" onMouseDown={(event) => event.stopPropagation()}>
+          <section
+            className="confirm-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="delete-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
             <p className="eyebrow">Permanent action</p>
             <h2 id="delete-title">Delete this post?</h2>
             <p>This cannot be undone.</p>
             <div className="post-actions">
-              <button className="secondary-button" type="button" onClick={closeDialog} disabled={deleting}>Cancel</button>
-              <button className="danger-button" type="button" onClick={confirmDelete} disabled={deleting}>{deleting ? 'Deleting…' : 'Confirm delete'}</button>
+              <button className="secondary-button" type="button" onClick={closeDialog} disabled={deleting}>
+                Cancel
+              </button>
+              <button className="danger-button" type="button" onClick={confirmDelete} disabled={deleting}>
+                {deleting ? 'Deleting…' : 'Confirm delete'}
+              </button>
             </div>
           </section>
         </div>

@@ -35,6 +35,29 @@ def test_health_returns_ok_after_selecting_from_file_database(tmp_path: Path) ->
     assert response.json() == {"status": "ok"}
 
 
+def test_health_returns_sanitized_503_when_real_probe_database_is_unavailable(tmp_path: Path) -> None:
+    """Hide SQLite connection details when the health probe cannot open its database."""
+
+    app = create_app(
+        Settings(
+            database_url=f"sqlite:///{(tmp_path / 'healthy.db').as_posix()}",
+            cors_origins=("http://testserver",),
+        )
+    )
+    unavailable_parent = tmp_path / "missing"
+    unavailable_url = f"sqlite:///{(unavailable_parent / 'health.db').as_posix()}"
+    unavailable_engine = create_database_engine(unavailable_url)
+    unavailable_parent.rmdir()
+    with TestClient(app) as client:
+        app.state.session_factory = create_session_factory(unavailable_engine)
+        response = client.get("/api/health")
+
+    assert response.status_code == 503
+    assert response.json() == {"error": "Service temporarily unavailable."}
+    assert "sqlite" not in response.text.casefold()
+    assert "missing" not in response.text
+
+
 def test_sqlite_foreign_keys_are_enabled(tmp_path: Path) -> None:
     """Enable SQLite foreign keys on every engine connection."""
 

@@ -95,3 +95,16 @@ def test_public_posts_clamps_low_and_high_limits(tmp_path: Path) -> None:
     assert len(low.json()) == 1
     assert len(high.json()) == 100
     assert high.json()[0]["title"] == "Note 100"
+
+
+def test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope(tmp_path: Path) -> None:
+    """Return a client validation error rather than leaking a public-feed failure."""
+
+    client, _ = build_client(tmp_path)
+    with client:
+        response = client.get("/api/public/posts?limit=not-a-number")
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "error": {"code": "VALIDATION_ERROR", "message": "Request validation failed."}
+    }

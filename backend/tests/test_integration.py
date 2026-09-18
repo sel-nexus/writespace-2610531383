@@ -3,8 +3,10 @@
 from pathlib import Path
 
 from fastapi.testclient import TestClient
+from sqlalchemy import select
 
 from app.core.config import Settings
+from app.db.models import Post, User
 from app.main import create_app
 
 
@@ -42,4 +44,25 @@ def test_cross_user_post_mutation_is_denied(tmp_path: Path) -> None:
         post = client.post("/api/posts", headers=auth(owner), json={"title": "Private", "content": "Unchanged"}).json()
         denied = client.put(f"/api/posts/{post['id']}", headers=auth(intruder), json={"title": "Changed", "content": "Changed"})
         assert denied.status_code == 403
+        assert client.delete(f"/api/posts/{post['id']}", headers=auth(intruder)).status_code == 403
         assert client.get(f"/api/posts/{post['id']}", headers=auth(owner)).json()["content"] == "Unchanged"
+
+
+def test_three_router_removal_chain_retains_post_and_direct_database_state(tmp_path: Path) -> None:
+    """Verify auth, posts, and users preserve attribution after a successful removal."""
+
+    app = create_app(Settings(database_url=f"sqlite:///{(tmp_path / 'chain.db').as_posix()}", cors_origins=("http://testserver",), jwt_secret="integration-secret", jwt_expires_minutes=60))
+    client = TestClient(app)
+    with client:
+        writer = client.post("/api/auth/register", json={"display_name": "Durable Writer", "username": "durablewriter", "password": "CorrectHorseBattery9"}).json()
+        post = client.post("/api/posts", headers=auth(writer), json={"title": "Durable", "content": "Must remain."}).json()
+        admin = client.post("/api/auth/login", json={"username": "admin", "password": "admin"}).json()
+        removed = client.delete(f"/api/users/{writer['profile']['id']}", headers=auth(admin))
+
+    assert removed.status_code == 204
+    with app.state.session_factory() as session:
+        persisted_post = session.get(Post, post["id"])
+        removed_user = session.scalar(select(User).where(User.id == writer["profile"]["id"]))
+        assert persisted_post is not None
+        assert (persisted_post.author_id, persisted_post.author_name_snapshot) == (None, "Durable Writer")
+        assert removed_user is None

@@ -40,6 +40,28 @@ def test_non_admin_is_forbidden_from_all_governance_routes(tmp_path: Path) -> No
         assert client.get("/api/admin/stats", headers=writer_headers).status_code == 403
         assert client.get("/api/users", headers=writer_headers).status_code == 403
         assert client.post("/api/users", headers=writer_headers, json={"display_name": "Denied", "username": "denied", "password": "CorrectHorseBattery9", "role": "user"}).status_code == 403
+        assert client.delete("/api/users/00000000-0000-0000-0000-000000000000", headers=writer_headers).status_code == 403
+
+
+def test_all_admin_endpoints_reject_missing_and_invalid_tokens(tmp_path: Path) -> None:
+    """Require a valid administrator token for reads, creates, and deletes."""
+
+    client, _ = build_client(tmp_path)
+    payload = {"display_name": "Denied", "username": "denied", "password": "CorrectHorseBattery9", "role": "user"}
+    routes = (
+        ("get", "/api/admin/stats", None),
+        ("get", "/api/users", None),
+        ("post", "/api/users", payload),
+        ("delete", "/api/users/00000000-0000-0000-0000-000000000000", None),
+    )
+    with client:
+        for method, path, body in routes:
+            anonymous = client.request(method.upper(), path, json=body)
+            invalid = client.request(method.upper(), path, json=body, headers={"Authorization": "Bearer invalid.token"})
+            assert anonymous.status_code == 401
+            assert invalid.status_code == 401
+            assert anonymous.json()["error"]["code"] == "AUTH_REQUIRED"
+            assert invalid.json()["error"]["code"] == "AUTH_INVALID"
 
 
 def test_admin_stats_and_profiles_are_safe(tmp_path: Path) -> None:
@@ -88,3 +110,34 @@ def test_removal_retains_posts_with_snapshots_and_null_author(tmp_path: Path) ->
         assert retained.author_id is None
         assert (retained.author_name_snapshot, retained.author_role_snapshot) == ("Retained Writer", "user")
         assert session.scalar(select(User).where(User.username == "retained")) is None
+
+
+def test_missing_user_delete_returns_not_found_envelope_without_state_change(tmp_path: Path) -> None:
+    """Preserve persisted users when an administrator removes an unknown UUID."""
+
+    client, app = build_client(tmp_path)
+    with client:
+        baseline = register(client, "unchanged", "Unchanged")
+        response = client.delete("/api/users/00000000-0000-0000-0000-000000000000", headers=login_admin(client))
+
+    assert response.status_code == 404
+    assert response.json() == {"error": {"code": "USER_NOT_FOUND", "message": "User not found."}}
+    with app.state.session_factory() as session:
+        assert session.get(User, baseline["profile"]["id"]) is not None
+
+
+def test_admin_user_payload_validation_does_not_write(tmp_path: Path) -> None:
+    """Reject missing, wrong-type, malformed JSON, and malformed UUID inputs."""
+
+    client, app = build_client(tmp_path)
+    with client:
+        admin_headers = login_admin(client)
+        missing = client.post("/api/users", headers=admin_headers, json={"username": "missing"})
+        wrong_type = client.post("/api/users", headers=admin_headers, json={"display_name": "Typed", "username": "typed", "password": "CorrectHorseBattery9", "role": ["user"]})
+        malformed = client.post("/api/users", headers={**admin_headers, "Content-Type": "application/json"}, content=b'{"display_name":')
+        malformed_uuid = client.delete("/api/users/not-a-uuid", headers=admin_headers)
+
+    assert [response.status_code for response in (missing, wrong_type, malformed, malformed_uuid)] == [422, 422, 422, 422]
+    assert all(response.json() == {"error": {"code": "VALIDATION_ERROR", "message": "Request validation failed."}} for response in (missing, wrong_type, malformed, malformed_uuid))
+    with app.state.session_factory() as session:
+        assert session.scalars(select(User).where(User.username != "admin")).all() == []

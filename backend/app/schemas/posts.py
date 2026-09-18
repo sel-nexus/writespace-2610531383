@@ -24,22 +24,35 @@ class PostWriteRequest(BaseModel):
         return trimmed
 
 
+class PostAuthor(BaseModel):
+    """Expose server-derived attribution for authenticated post summaries."""
+
+    id: str | None
+    display_name: str
+    role: str
+
+
 class PostSummary(BaseModel):
     """Expose an authenticated post list projection without full content."""
 
     id: str
     title: str
+    author: PostAuthor
+    created_at: datetime
+    updated_at: datetime
+
+
+class PostDetail(BaseModel):
+    """Expose the full plain-text post using the existing detail contract."""
+
+    id: str
+    title: str
+    content: str
     author_id: str | None
     author_name: str
     author_role: str
     created_at: datetime
     updated_at: datetime
-
-
-class PostDetail(PostSummary):
-    """Expose the full plain-text post for authenticated readers."""
-
-    content: str
 
 
 class PublicPostSummary(BaseModel):

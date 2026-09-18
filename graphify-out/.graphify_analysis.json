@@ -1,0 +1,302 @@
+{
+  "communities": {
+    "0": [
+      "backend_app_api_health",
+      "backend_app_api_health_rationale_1",
+      "backend_app_core_config",
+      "backend_app_core_config_default_database_url",
+      "backend_app_core_config_get_settings",
+      "backend_app_core_config_rationale_1",
+      "backend_app_core_config_rationale_10",
+      "backend_app_core_config_rationale_22",
+      "backend_app_core_config_rationale_33",
+      "backend_app_core_config_settings",
+      "backend_app_main",
+      "backend_app_main_create_app",
+      "backend_app_main_lifespan",
+      "backend_app_main_rationale_1",
+      "backend_app_main_rationale_23",
+      "backend_app_main_rationale_38",
+      "backend_tests_test_health",
+      "backend_tests_test_health_rationale_1",
+      "backend_tests_test_health_rationale_17",
+      "backend_tests_test_health_rationale_26",
+      "backend_tests_test_health_test_default_configuration_uses_file_backed_sqlite",
+      "backend_tests_test_health_test_health_returns_ok_after_selecting_from_file_database",
+      "fastapi"
+    ],
+    "1": [
+      "backend_app_db_session",
+      "backend_app_db_session_create_database_engine",
+      "backend_app_db_session_create_session_factory",
+      "backend_app_db_session_ensure_database_directory",
+      "backend_app_db_session_get_session",
+      "backend_app_db_session_py_engine",
+      "backend_app_db_session_py_session",
+      "backend_app_db_session_py_sessionmaker",
+      "backend_app_db_session_rationale_1",
+      "backend_app_db_session_rationale_12",
+      "backend_app_db_session_rationale_24",
+      "backend_app_db_session_rationale_54",
+      "backend_app_db_session_rationale_67",
+      "backend_tests_test_health_rationale_39",
+      "backend_tests_test_health_rationale_49",
+      "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
+      "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "path"
+    ],
+    "2": [
+      "backend_app_db_bootstrap",
+      "backend_app_db_bootstrap_bootstrap_database",
+      "backend_app_db_bootstrap_py_engine",
+      "backend_app_db_bootstrap_py_session",
+      "backend_app_db_bootstrap_py_sessionmaker",
+      "backend_app_db_bootstrap_rationale_1",
+      "backend_app_db_bootstrap_rationale_14",
+      "backend_app_db_models",
+      "backend_app_db_models_base",
+      "backend_app_db_models_post",
+      "backend_app_db_models_rationale_1",
+      "backend_app_db_models_rationale_12",
+      "backend_app_db_models_rationale_24",
+      "backend_app_db_models_rationale_8",
+      "backend_app_db_models_user",
+      "declarativebase"
+    ],
+    "3": [
+      "frontend_package",
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_jsdom",
+      "frontend_package_devdependencies_playwright_test",
+      "frontend_package_devdependencies_vitest",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_test",
+      "frontend_package_type",
+      "frontend_package_version",
+      "jsdom",
+      "playwright_test",
+      "vitest"
+    ],
+    "4": [
+      "engine_workers_fb44fa7bd1cd_scratch_findings_durable_fastapi_sqlalchemy_foundation",
+      "engine_workers_fb44fa7bd1cd_scratch_findings_editorial_frontend_shell",
+      "plan_administrative_governance",
+      "plan_editorial_warm_paper_design",
+      "plan_file_backed_sqlite",
+      "plan_foundation",
+      "plan_health_api",
+      "plan_identity",
+      "plan_public_discovery",
+      "plan_writer_post_lifecycle",
+      "plan_writespace",
+      "todos_default_admin_bootstrap",
+      "todos_foundation",
+      "todos_normalized_http_errors"
+    ],
+    "5": [
+      "backend_app_api_health_healthresponse",
+      "backend_app_api_health_rationale_12",
+      "backend_app_api_health_rationale_24",
+      "backend_app_api_health_read_health",
+      "backend_app_services_health",
+      "backend_app_services_health_check_database",
+      "backend_app_services_health_py_session",
+      "backend_app_services_health_rationale_1",
+      "backend_app_services_health_rationale_8",
+      "basemodel",
+      "get",
+      "request"
+    ],
+    "6": [
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_prop_types",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_dependencies_vite",
+      "frontend_package_dependencies_vitejs_plugin_react",
+      "prop_types",
+      "react",
+      "react_dom",
+      "vite",
+      "vitejs_plugin_react"
+    ],
+    "7": [
+      "frontend_src_api_client",
+      "frontend_src_api_client_apierror",
+      "frontend_src_api_client_apierror_constructor",
+      "frontend_src_api_client_gethealth",
+      "frontend_src_api_client_requestjson",
+      "frontend_src_api_client_test",
+      "frontend_src_app",
+      "frontend_src_app_app",
+      "frontend_src_main"
+    ],
+    "8": [
+      "docker_compose_backend",
+      "docker_compose_frontend",
+      "docker_compose_writespace_data"
+    ],
+    "9": [
+      "backend_app_api_init",
+      "backend_app_api_init_rationale_1"
+    ],
+    "10": [
+      "backend_app_core_init",
+      "backend_app_core_init_rationale_1"
+    ],
+    "11": [
+      "backend_app_db_init",
+      "backend_app_db_init_rationale_1"
+    ],
+    "12": [
+      "backend_app_init",
+      "backend_app_init_rationale_1"
+    ],
+    "13": [
+      "backend_app_services_init",
+      "backend_app_services_init_rationale_1"
+    ],
+    "14": [
+      "e2e_foundation_spec",
+      "e2e_foundation_spec_test_expect"
+    ],
+    "15": [
+      "frontend_vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1541501976284585,
+    "1": 0.1568627450980392,
+    "2": 0.16666666666666666,
+    "3": 0.125,
+    "4": 0.15384615384615385,
+    "5": 0.16666666666666666,
+    "6": 0.18181818181818182,
+    "7": 0.4444444444444444,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "backend_app_db_bootstrap_bootstrap_database",
+      "label": "bootstrap_database()",
+      "degree": 10
+    },
+    {
+      "id": "backend_app_main_create_app",
+      "label": "create_app()",
+      "degree": 10
+    },
+    {
+      "id": "backend_app_db_session_create_database_engine",
+      "label": "create_database_engine()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_db_session_create_session_factory",
+      "label": "create_session_factory()",
+      "degree": 9
+    },
+    {
+      "id": "backend_app_core_config_settings",
+      "label": "Settings",
+      "degree": 7
+    },
+    {
+      "id": "plan_foundation",
+      "label": "Foundation and durable health",
+      "degree": 7
+    },
+    {
+      "id": "backend_app_api_health_read_health",
+      "label": "read_health()",
+      "degree": 6
+    },
+    {
+      "id": "backend_app_core_config_default_database_url",
+      "label": "default_database_url()",
+      "degree": 6
+    },
+    {
+      "id": "backend_app_core_config_get_settings",
+      "label": "get_settings()",
+      "degree": 6
+    },
+    {
+      "id": "backend_app_db_models_base",
+      "label": "Base",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Durable FastAPI SQLAlchemy foundation",
+      "target": "Foundation and durable health",
+      "source_files": [
+        ".engine/workers/fb44fa7bd1cd/scratch/findings.md",
+        "PLAN.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Durable FastAPI SQLAlchemy foundation` unexpectedly reaches hub `Foundation and durable health`"
+    },
+    {
+      "source": "Foundation",
+      "target": "Foundation and durable health",
+      "source_files": [
+        "todos.yaml",
+        "PLAN.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Editorial frontend shell",
+      "target": "Editorial warm-paper design",
+      "source_files": [
+        ".engine/workers/fb44fa7bd1cd/scratch/findings.md",
+        "PLAN.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "lifespan()",
+      "target": "bootstrap_database()",
+      "source_files": [
+        "backend/app/main.py",
+        "backend/app/db/bootstrap.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "test_bootstrap_is_idempotent_and_seeds_hashed_admin()",
+      "target": "bootstrap_database()",
+      "source_files": [
+        "backend/tests/test_health.py",
+        "backend/app/db/bootstrap.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

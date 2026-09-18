@@ -98,3 +98,19 @@ def test_me_requires_valid_active_persisted_account(tmp_path: Path) -> None:
     assert valid.json()["username"] == "ada"
     assert forged.status_code == 401
     assert inactive.status_code == 401
+
+
+def test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write(tmp_path: Path) -> None:
+    """Reject malformed identity payloads without creating an account."""
+
+    client, app = build_client(tmp_path)
+    with client:
+        missing = client.post("/api/auth/register", json={"username": "missing", "password": "CorrectHorseBattery9"})
+        wrong_type = client.post("/api/auth/register", json={"display_name": "Typed", "username": ["typed"], "password": "CorrectHorseBattery9"})
+        malformed = client.post("/api/auth/register", content=b'{"display_name":', headers={"Content-Type": "application/json"})
+        login_missing = client.post("/api/auth/login", json={"username": "ada"})
+
+    assert [response.status_code for response in (missing, wrong_type, malformed, login_missing)] == [422, 422, 422, 422]
+    assert all(response.json() == {"error": {"code": "VALIDATION_ERROR", "message": "Request validation failed."}} for response in (missing, wrong_type, malformed, login_missing))
+    with app.state.session_factory() as session:
+        assert session.scalars(select(User).where(User.username != "admin")).all() == []

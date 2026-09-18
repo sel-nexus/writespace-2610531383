@@ -67,8 +67,12 @@ def test_writer_can_create_read_update_and_delete_post(tmp_path: Path) -> None:
 
         listed = client.get("/api/posts?limit=5", headers=auth(writer))
         assert listed.status_code == 200
-        assert listed.json()[0]["id"] == post["id"]
-        assert "content" not in listed.json()[0]
+        summary = listed.json()[0]
+        assert summary["id"] == post["id"]
+        assert summary["author"] == {"id": writer["profile"]["id"], "display_name": "Writer Name", "role": "user"}
+        assert set(summary) == {"id", "title", "author", "created_at", "updated_at"}
+        assert not {"author_id", "author_name", "author_role"}.intersection(summary)
+        assert "content" not in summary
         assert client.get(f"/api/posts/{post['id']}", headers=auth(writer)).json()["content"] == "First body"
 
         updated = client.put(f"/api/posts/{post['id']}", headers=auth(writer), json={"title": "Revised", "content": "Revised body"})
@@ -110,6 +114,47 @@ def test_non_owner_mutation_is_forbidden_without_database_change(tmp_path: Path)
         post = session.get(Post, created["id"])
         assert post is not None
         assert (post.title, post.content) == ("Protected", "Original")
+
+
+def test_post_invalid_types_malformed_json_and_uuid_do_not_change_database(tmp_path: Path) -> None:
+    """Reject unsafe post requests before a write and preserve existing content."""
+
+    client, app = build_client(tmp_path)
+    with client:
+        writer = register(client, "negativewriter", "Negative Writer")
+        baseline = client.post("/api/posts", headers=auth(writer), json={"title": "Baseline", "content": "Unchanged"}).json()
+        missing = client.post("/api/posts", headers=auth(writer), json={"title": "Only title"})
+        wrong_type = client.post("/api/posts", headers=auth(writer), json={"title": ["wrong"], "content": "Body"})
+        malformed = client.post(
+            "/api/posts",
+            content=b'{"title":',
+            headers={**auth(writer), "Content-Type": "application/json"},
+        )
+        invalid_uuid = client.get("/api/posts/not-a-uuid", headers=auth(writer))
+
+    assert [response.status_code for response in (missing, wrong_type, malformed, invalid_uuid)] == [422, 422, 422, 422]
+    assert all(response.json() == {"error": {"code": "VALIDATION_ERROR", "message": "Request validation failed."}} for response in (missing, wrong_type, malformed, invalid_uuid))
+    with app.state.session_factory() as session:
+        persisted = session.get(Post, baseline["id"])
+        assert persisted is not None
+        assert (persisted.title, persisted.content) == ("Baseline", "Unchanged")
+
+
+def test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution(tmp_path: Path) -> None:
+    """Accept hostile-looking content as inert text through the real post API."""
+
+    client, _ = build_client(tmp_path)
+    title = "<script>alert(1)</script>"
+    content = "'; DROP TABLE posts; -- <img src=x onerror=alert(1)>"
+    with client:
+        writer = register(client, "plaintextwriter", "Plain Text Writer")
+        created = client.post("/api/posts", headers=auth(writer), json={"title": title, "content": content})
+        fetched = client.get(f"/api/posts/{created.json()['id']}", headers=auth(writer))
+
+    assert created.status_code == 201
+    assert fetched.status_code == 200
+    assert fetched.json()["title"] == title
+    assert fetched.json()["content"] == content
 
 
 def test_default_admin_can_override_post_ownership(tmp_path: Path) -> None:

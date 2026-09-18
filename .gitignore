@@ -14,6 +14,7 @@ data/
 coverage/
 playwright-report/
 test-results/
+frontend/e2e/screenshots/
 PLAN.md
 todos.yaml
 developer_metadata.json

@@ -27,6 +27,10 @@ export default function PostsPage() {
 
   useEffect(() => { loadPosts(); }, [token]);
 
+  const visiblePosts = profile.role === 'admin'
+    ? posts
+    : posts.filter((post) => post.author.id === profile.id);
+
   return (
     <main className="page-shell posts-shell">
       <nav className="masthead" aria-label="WriteSpace">
@@ -50,14 +54,16 @@ export default function PostsPage() {
           <button className="secondary-button" type="button" onClick={loadPosts}>Try again</button>
         </div>
       )}
-      {phase === 'ready' && posts.length === 0 && <p className="resource-status">No posts yet. Begin with one clear thought.</p>}
-      {phase === 'ready' && posts.length > 0 && (
+      {phase === 'ready' && visiblePosts.length === 0 && (
+        <p className="resource-status">No posts yet. Begin with one clear thought.</p>
+      )}
+      {phase === 'ready' && visiblePosts.length > 0 && (
         <div className="post-grid" aria-label="Your posts">
-          {posts.map((post) => (
+          {visiblePosts.map((post) => (
             <article className="post-preview" key={post.id}>
               <time dateTime={post.created_at}>{new Date(post.created_at).toLocaleDateString()}</time>
               <h2>{post.title}</h2>
-              <p>By {post.author_name}</p>
+              <p>By {post.author.display_name}</p>
               <Link className="preview-link" to={`/blog/${post.id}`}>Read the note <span aria-hidden="true">→</span></Link>
             </article>
           ))}

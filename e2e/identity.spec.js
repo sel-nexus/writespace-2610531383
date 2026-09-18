@@ -1,21 +1,17 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('../frontend/node_modules/@playwright/test');
+const { captureBrowserErrors, registerWriter } = require('./support');
 
-test('registers a unique writer and renders the backend-derived profile', async ({ page }) => {
-  const consoleErrors = [];
-  page.on('console', (message) => {
-    if (message.type() === 'error') consoleErrors.push(message.text());
-  });
-  page.on('pageerror', (error) => consoleErrors.push(error.message));
-
-  const username = `writer${Date.now()}`;
-  await page.goto('http://127.0.0.1:5173/register');
-  await page.getByLabel('Display name').fill('E2E Writer');
-  await page.getByLabel('Username').fill(username);
-  await page.getByLabel('Password').fill('CorrectHorseBattery9');
+test('shows visible registration validation and reaches the backend-backed empty post list', async ({ page }) => {
+  const assertClean = captureBrowserErrors(page);
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Get Started' }).first().click();
   await page.getByRole('button', { name: 'Create account' }).click();
-
+  await expect(page.getByRole('alert')).toHaveText('Display name is required.');
+  const username = await registerWriter(page, Date.now());
   await expect(page).toHaveURL(/\/blogs$/);
-  await expect(page.getByRole('heading', { name: 'Welcome, E2E Writer' })).toBeVisible();
   await expect(page.getByText(`@${username}`)).toBeVisible();
-  expect(consoleErrors).toEqual([]);
+  await expect(page.getByRole('heading', { name: 'Notes with room to breathe.' })).toBeVisible();
+  await expect(page.getByText('No posts yet. Begin with one clear thought.')).toBeVisible();
+  await page.screenshot({ path: 'e2e/screenshots/identity-post-list.png' });
+  assertClean();
 });

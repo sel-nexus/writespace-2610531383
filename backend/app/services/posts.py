@@ -72,18 +72,29 @@ class PostService:
         return PostSummary(
             id=post.id,
             title=post.title,
+            author={
+                "id": post.author_id,
+                "display_name": post.author_name_snapshot,
+                "role": post.author_role_snapshot,
+            },
+            created_at=post.created_at,
+            updated_at=post.updated_at,
+        )
+
+    @staticmethod
+    def to_detail(post: Post) -> PostDetail:
+        """Map persisted post data to the existing authenticated detail DTO."""
+
+        return PostDetail(
+            id=post.id,
+            title=post.title,
+            content=post.content,
             author_id=post.author_id,
             author_name=post.author_name_snapshot,
             author_role=post.author_role_snapshot,
             created_at=post.created_at,
             updated_at=post.updated_at,
         )
-
-    @classmethod
-    def to_detail(cls, post: Post) -> PostDetail:
-        """Map persisted post data to the authenticated full-detail DTO."""
-
-        return PostDetail(content=post.content, **cls.to_summary(post).model_dump())
 
     def list_summaries(self, limit: int) -> list[PostSummary]:
         """Return newest-first authenticated summaries within a route-bounded limit."""
