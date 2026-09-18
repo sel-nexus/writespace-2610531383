@@ -1515,11 +1515,21 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_app_schemas_posts_postauthor",
+      "label": "PostAuthor",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/posts.py",
+      "source_location": "L27",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_schemas_posts_postsummary",
       "label": "PostSummary",
       "file_type": "code",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L27",
+      "source_location": "L35",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -1529,7 +1539,7 @@
       "label": "PostDetail",
       "file_type": "code",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L39",
+      "source_location": "L45",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -1539,7 +1549,7 @@
       "label": "PublicPostSummary",
       "file_type": "code",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L45",
+      "source_location": "L58",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -1570,26 +1580,34 @@
     },
     {
       "id": "backend_app_schemas_posts_rationale_28",
-      "label": "Expose an authenticated post list projection without full content.",
+      "label": "Expose server-derived attribution for authenticated post summaries.",
       "file_type": "rationale",
       "source_file": "backend/app/schemas/posts.py",
       "source_location": "L28",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_schemas_posts_rationale_40",
-      "label": "Expose the full plain-text post for authenticated readers.",
+      "id": "backend_app_schemas_posts_rationale_36",
+      "label": "Expose an authenticated post list projection without full content.",
       "file_type": "rationale",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L40",
+      "source_location": "L36",
       "_origin": "ast"
     },
     {
       "id": "backend_app_schemas_posts_rationale_46",
-      "label": "Expose an allow-listed post preview to anonymous visitors.",
+      "label": "Expose the full plain-text post using the existing detail contract.",
       "file_type": "rationale",
       "source_file": "backend/app/schemas/posts.py",
       "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_posts_rationale_59",
+      "label": "Expose an allow-listed post preview to anonymous visitors.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/posts.py",
+      "source_location": "L59",
       "_origin": "ast"
     },
     {
@@ -2155,7 +2173,7 @@
       "label": ".to_detail()",
       "file_type": "code",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L83",
+      "source_location": "L85",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2164,7 +2182,7 @@
       "label": ".list_summaries()",
       "file_type": "code",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L88",
+      "source_location": "L99",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2173,7 +2191,7 @@
       "label": ".get()",
       "file_type": "code",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L94",
+      "source_location": "L105",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2182,7 +2200,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L99",
+      "source_location": "L110",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2191,7 +2209,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L122",
+      "source_location": "L133",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2200,7 +2218,7 @@
       "label": ".delete()",
       "file_type": "code",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L141",
+      "source_location": "L152",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2261,51 +2279,51 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_app_services_posts_rationale_84",
-      "label": "Map persisted post data to the authenticated full-detail DTO.",
+      "id": "backend_app_services_posts_rationale_86",
+      "label": "Map persisted post data to the existing authenticated detail DTO.",
       "file_type": "rationale",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L84",
-      "_origin": "ast"
-    },
-    {
-      "id": "backend_app_services_posts_rationale_89",
-      "label": "Return newest-first authenticated summaries within a route-bounded limit.",
-      "file_type": "rationale",
-      "source_file": "backend/app/services/posts.py",
-      "source_location": "L89",
-      "_origin": "ast"
-    },
-    {
-      "id": "backend_app_services_posts_rationale_95",
-      "label": "Load a post by its server-issued UUID string.",
-      "file_type": "rationale",
-      "source_file": "backend/app/services/posts.py",
-      "source_location": "L95",
+      "source_location": "L86",
       "_origin": "ast"
     },
     {
       "id": "backend_app_services_posts_rationale_100",
-      "label": "Persist a new post with server-derived UUID, timestamps, and author snapshots.",
+      "label": "Return newest-first authenticated summaries within a route-bounded limit.",
       "file_type": "rationale",
       "source_file": "backend/app/services/posts.py",
       "source_location": "L100",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_services_posts_rationale_123",
-      "label": "Persist owner-or-admin edits or raise when the existing post is forbidden.",
+      "id": "backend_app_services_posts_rationale_106",
+      "label": "Load a post by its server-issued UUID string.",
       "file_type": "rationale",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L123",
+      "source_location": "L106",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_services_posts_rationale_142",
+      "id": "backend_app_services_posts_rationale_111",
+      "label": "Persist a new post with server-derived UUID, timestamps, and author snapshots.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/posts.py",
+      "source_location": "L111",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_posts_rationale_134",
+      "label": "Persist owner-or-admin edits or raise when the existing post is forbidden.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/posts.py",
+      "source_location": "L134",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_posts_rationale_153",
       "label": "Delete an owner-or-admin post, returning None only when it is absent.",
       "file_type": "rationale",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L142",
+      "source_location": "L153",
       "_origin": "ast"
     },
     {
@@ -2531,11 +2549,20 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_admin_test_all_admin_endpoints_reject_missing_and_invalid_tokens",
+      "label": "test_all_admin_endpoints_reject_missing_and_invalid_tokens()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L46",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_admin_test_admin_stats_and_profiles_are_safe",
       "label": "test_admin_stats_and_profiles_are_safe()",
       "file_type": "code",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L45",
+      "source_location": "L67",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2544,7 +2571,7 @@
       "label": "test_admin_create_normalizes_role_and_rejects_casefolded_conflict()",
       "file_type": "code",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L57",
+      "source_location": "L79",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2553,7 +2580,7 @@
       "label": "test_self_and_default_administrator_deletion_are_protected()",
       "file_type": "code",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L68",
+      "source_location": "L90",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2562,7 +2589,25 @@
       "label": "test_removal_retains_posts_with_snapshots_and_null_author()",
       "file_type": "code",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L79",
+      "source_location": "L101",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "label": "test_missing_user_delete_returns_not_found_envelope_without_state_change()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L115",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_test_admin_user_payload_validation_does_not_write",
+      "label": "test_admin_user_payload_validation_does_not_write()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L129",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2572,6 +2617,30 @@
       "file_type": "rationale",
       "source_file": "backend/tests/test_admin.py",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_47",
+      "label": "Require a valid administrator token for reads, creates, and deletes.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_116",
+      "label": "Preserve persisted users when an administrator removes an unknown UUID.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L116",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_130",
+      "label": "Reject missing, wrong-type, malformed JSON, and malformed UUID inputs.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L130",
       "_origin": "ast"
     },
     {
@@ -2653,6 +2722,15 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_auth_test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write",
+      "label": "test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L103",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_auth_rationale_1",
       "label": "Exercise identity services and HTTP endpoints against file-backed SQLite.",
       "file_type": "rationale",
@@ -2709,6 +2787,14 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_auth_rationale_104",
+      "label": "Reject malformed identity payloads without creating an account.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L104",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_health",
       "label": "test_health.py",
       "file_type": "code",
@@ -2746,11 +2832,20 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
+      "label": "test_health_returns_sanitized_503_when_real_probe_database_is_unavailable()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L38",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
       "label": "test_sqlite_foreign_keys_are_enabled()",
       "file_type": "code",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L38",
+      "source_location": "L61",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -2760,7 +2855,7 @@
       "label": "test_bootstrap_is_idempotent_and_seeds_hashed_admin()",
       "file_type": "code",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L48",
+      "source_location": "L71",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -2794,7 +2889,7 @@
     },
     {
       "id": "backend_tests_test_health_rationale_39",
-      "label": "Enable SQLite foreign keys on every engine connection.",
+      "label": "Hide SQLite connection details when the health probe cannot open its database.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_health.py",
       "source_location": "L39",
@@ -2802,13 +2897,20 @@
       "community": 1
     },
     {
-      "id": "backend_tests_test_health_rationale_49",
+      "id": "backend_tests_test_health_rationale_62",
+      "label": "Enable SQLite foreign keys on every engine connection.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L62",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_health_rationale_72",
       "label": "Create only one reusable default admin across repeated bootstraps.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L49",
-      "_origin": "ast",
-      "community": 1
+      "source_location": "L72",
+      "_origin": "ast"
     },
     {
       "id": "backend_tests_test_integration",
@@ -2823,7 +2925,7 @@
       "label": "build_client()",
       "file_type": "code",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L11",
+      "source_location": "L13",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2848,7 +2950,7 @@
       "label": "auth()",
       "file_type": "code",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L16",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2857,7 +2959,7 @@
       "label": "test_writer_post_admin_stats_list_remove_and_retained_read()",
       "file_type": "code",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2866,7 +2968,16 @@
       "label": "test_cross_user_post_mutation_is_denied()",
       "file_type": "code",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L37",
+      "source_location": "L39",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "label": "test_three_router_removal_chain_retains_post_and_direct_database_state()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L51",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2876,6 +2987,14 @@
       "file_type": "rationale",
       "source_file": "backend/tests/test_integration.py",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_rationale_52",
+      "label": "Verify auth, posts, and users preserve attribution after a successful removal.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L52",
       "_origin": "ast"
     },
     {
@@ -2952,7 +3071,7 @@
       "label": "test_invalid_payloads_do_not_write_or_accept_server_owned_fields()",
       "file_type": "code",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L81",
+      "source_location": "L85",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2961,7 +3080,25 @@
       "label": "test_non_owner_mutation_is_forbidden_without_database_change()",
       "file_type": "code",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L99",
+      "source_location": "L103",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "label": "test_post_invalid_types_malformed_json_and_uuid_do_not_change_database()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L119",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "label": "test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L143",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2970,7 +3107,7 @@
       "label": "test_default_admin_can_override_post_ownership()",
       "file_type": "code",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L115",
+      "source_location": "L160",
       "_callable": true,
       "_origin": "ast"
     },
@@ -3023,27 +3160,43 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_posts_rationale_82",
+      "id": "backend_tests_test_posts_rationale_86",
       "label": "Reject blank, overlong, and extra client fields before post persistence.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L82",
+      "source_location": "L86",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_posts_rationale_100",
+      "id": "backend_tests_test_posts_rationale_104",
       "label": "Preserve a writer's post when another writer attempts update or delete.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L100",
+      "source_location": "L104",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_posts_rationale_116",
+      "id": "backend_tests_test_posts_rationale_120",
+      "label": "Reject unsafe post requests before a write and preserve existing content.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L120",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_posts_rationale_144",
+      "label": "Accept hostile-looking content as inert text through the real post API.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L144",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_posts_rationale_161",
       "label": "Allow the persisted bootstrap administrator to mutate another writer's post.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L116",
+      "source_location": "L161",
       "_origin": "ast"
     },
     {
@@ -3115,6 +3268,15 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_public_test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope",
+      "label": "test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_public.py",
+      "source_location": "L100",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_public_rationale_1",
       "label": "Exercise anonymous post discovery against file-backed SQLite.",
       "file_type": "rationale",
@@ -3155,6 +3317,14 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_public_rationale_101",
+      "label": "Return a client validation error rather than leaking a public-feed failure.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_public.py",
+      "source_location": "L101",
+      "_origin": "ast"
+    },
+    {
       "id": "e2e_admin_spec",
       "label": "admin.spec.js",
       "file_type": "code",
@@ -3171,6 +3341,14 @@
       "_origin": "ast"
     },
     {
+      "id": "e2e_admin_spec_capturebrowsererrors",
+      "label": "{ captureBrowserErrors }",
+      "file_type": "code",
+      "source_file": "e2e/admin.spec.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
       "id": "e2e_discovery_spec",
       "label": "discovery.spec.js",
       "file_type": "code",
@@ -3184,6 +3362,14 @@
       "file_type": "code",
       "source_file": "e2e/discovery.spec.js",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_discovery_spec_capturebrowsererrors",
+      "label": "{ captureBrowserErrors }",
+      "file_type": "code",
+      "source_file": "e2e/discovery.spec.js",
+      "source_location": "L2",
       "_origin": "ast"
     },
     {
@@ -3205,6 +3391,14 @@
       "community": 14
     },
     {
+      "id": "e2e_foundation_spec_capturebrowsererrors",
+      "label": "{ captureBrowserErrors }",
+      "file_type": "code",
+      "source_file": "e2e/foundation.spec.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
       "id": "e2e_identity_spec",
       "label": "identity.spec.js",
       "file_type": "code",
@@ -3221,6 +3415,14 @@
       "_origin": "ast"
     },
     {
+      "id": "e2e_identity_spec_capturebrowsererrors_registerwriter",
+      "label": "{ captureBrowserErrors, registerWriter }",
+      "file_type": "code",
+      "source_file": "e2e/identity.spec.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
       "id": "e2e_posts_spec",
       "label": "posts.spec.js",
       "file_type": "code",
@@ -3234,6 +3436,48 @@
       "file_type": "code",
       "source_file": "e2e/posts.spec.js",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_posts_spec_capturebrowsererrors_registerwriter",
+      "label": "{ captureBrowserErrors, registerWriter }",
+      "file_type": "code",
+      "source_file": "e2e/posts.spec.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_support",
+      "label": "support.js",
+      "file_type": "code",
+      "source_file": "e2e/support.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_support_expect",
+      "label": "{ expect }",
+      "file_type": "code",
+      "source_file": "e2e/support.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_support_capturebrowsererrors",
+      "label": "captureBrowserErrors()",
+      "file_type": "code",
+      "source_file": "e2e/support.js",
+      "source_location": "L3",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_support_registerwriter",
+      "label": "registerWriter()",
+      "file_type": "code",
+      "source_file": "e2e/support.js",
+      "source_location": "L12",
+      "_callable": true,
       "_origin": "ast"
     },
     {
@@ -3544,6 +3788,14 @@
       "community": 3
     },
     {
+      "id": "frontend_playwright_config",
+      "label": "playwright.config.js",
+      "file_type": "code",
+      "source_file": "frontend/playwright.config.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_api_client",
       "label": "client.js",
       "file_type": "code",
@@ -3715,7 +3967,7 @@
       "label": "DashboardPage()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L25",
+      "source_location": "L28",
       "_callable": true,
       "_origin": "ast"
     },
@@ -3724,7 +3976,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L43",
+      "source_location": "L56",
       "_callable": true,
       "_origin": "ast",
       "community": 7
@@ -3835,7 +4087,7 @@
       "label": "Stat()",
       "file_type": "code",
       "source_file": "frontend/src/features/admin/AdminPage.jsx",
-      "source_location": "L113",
+      "source_location": "L161",
       "_callable": true,
       "_origin": "ast"
     },
@@ -3873,11 +4125,20 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_features_auth_authpage_test_locationdisplay",
+      "label": "LocationDisplay()",
+      "file_type": "code",
+      "source_file": "frontend/src/features/auth/AuthPage.test.jsx",
+      "source_location": "L12",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_features_auth_authpage_test_renderpage",
       "label": "renderPage()",
       "file_type": "code",
       "source_file": "frontend/src/features/auth/AuthPage.test.jsx",
-      "source_location": "L12",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast"
     },
@@ -4012,7 +4273,16 @@
       "label": "mocks",
       "file_type": "code",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
-      "source_location": "L10",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_features_posts_posts_test_locationdisplay",
+      "label": "LocationDisplay()",
+      "file_type": "code",
+      "source_file": "frontend/src/features/posts/posts.test.jsx",
+      "source_location": "L19",
+      "_callable": true,
       "_origin": "ast"
     },
     {
@@ -4020,7 +4290,16 @@
       "label": "renderEditor()",
       "file_type": "code",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
-      "source_location": "L18",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_features_posts_posts_test_renderpostspage",
+      "label": "renderPostsPage()",
+      "file_type": "code",
+      "source_file": "frontend/src/features/posts/posts.test.jsx",
+      "source_location": "L36",
       "_callable": true,
       "_origin": "ast"
     },
@@ -4029,7 +4308,7 @@
       "label": "renderDetail()",
       "file_type": "code",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
-      "source_location": "L22",
+      "source_location": "L44",
       "_callable": true,
       "_origin": "ast"
     },
@@ -7553,11 +7832,31 @@
     },
     {
       "source": "backend_app_schemas_posts",
-      "target": "backend_app_schemas_posts_postsummary",
+      "target": "backend_app_schemas_posts_postauthor",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
       "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_posts_postauthor",
+      "target": "backend_app_schemas_posts_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/posts.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_posts",
+      "target": "backend_app_schemas_posts_postsummary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/posts.py",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7567,7 +7866,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L27",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7577,17 +7876,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_app_schemas_posts_postdetail",
-      "target": "backend_app_schemas_posts_postsummary",
+      "target": "backend_app_schemas_posts_py_basemodel",
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7597,7 +7896,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L45",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7607,7 +7906,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L45",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7643,7 +7942,7 @@
     },
     {
       "source": "backend_app_schemas_posts_rationale_28",
-      "target": "backend_app_schemas_posts_postsummary",
+      "target": "backend_app_schemas_posts_postauthor",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
@@ -7652,22 +7951,32 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_schemas_posts_rationale_40",
-      "target": "backend_app_schemas_posts_postdetail",
+      "source": "backend_app_schemas_posts_rationale_36",
+      "target": "backend_app_schemas_posts_postsummary",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
-      "source_location": "L40",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_app_schemas_posts_rationale_46",
-      "target": "backend_app_schemas_posts_publicpostsummary",
+      "target": "backend_app_schemas_posts_postdetail",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/posts.py",
       "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_posts_rationale_59",
+      "target": "backend_app_schemas_posts_publicpostsummary",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/posts.py",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8635,7 +8944,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8646,7 +8955,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8657,7 +8966,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8667,7 +8976,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L88",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8678,7 +8987,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L88",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8688,7 +8997,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L94",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8699,7 +9008,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L94",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8709,7 +9018,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L99",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8720,7 +9029,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L99",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8731,7 +9040,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L99",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8742,7 +9051,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L99",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8752,7 +9061,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L122",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8763,7 +9072,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L122",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8774,7 +9083,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L122",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8785,7 +9094,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L122",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8795,7 +9104,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L141",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8806,7 +9115,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L141",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8850,18 +9159,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L86",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_services_posts_postservice_to_detail",
-      "target": "backend_app_services_posts_postservice_to_summary",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/services/posts.py",
-      "source_location": "L86",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8872,7 +9170,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L92",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8883,7 +9181,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L103",
+      "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8894,7 +9192,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L120",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8905,7 +9203,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L125",
+      "source_location": "L136",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8916,7 +9214,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L139",
+      "source_location": "L150",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8927,7 +9225,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L144",
+      "source_location": "L155",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9002,38 +9300,18 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_services_posts_rationale_84",
+      "source": "backend_app_services_posts_rationale_86",
       "target": "backend_app_services_posts_postservice_to_detail",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L84",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_services_posts_rationale_89",
-      "target": "backend_app_services_posts_postservice_list_summaries",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/services/posts.py",
-      "source_location": "L89",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_services_posts_rationale_95",
-      "target": "backend_app_services_posts_postservice_get",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/services/posts.py",
-      "source_location": "L95",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_app_services_posts_rationale_100",
-      "target": "backend_app_services_posts_postservice_create",
+      "target": "backend_app_services_posts_postservice_list_summaries",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
@@ -9042,22 +9320,42 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_services_posts_rationale_123",
-      "target": "backend_app_services_posts_postservice_update",
+      "source": "backend_app_services_posts_rationale_106",
+      "target": "backend_app_services_posts_postservice_get",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L123",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_services_posts_rationale_142",
+      "source": "backend_app_services_posts_rationale_111",
+      "target": "backend_app_services_posts_postservice_create",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/posts.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_posts_rationale_134",
+      "target": "backend_app_services_posts_postservice_update",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/posts.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_posts_rationale_153",
       "target": "backend_app_services_posts_postservice_delete",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L142",
+      "source_location": "L153",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9537,11 +9835,32 @@
     },
     {
       "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_all_admin_endpoints_reject_missing_and_invalid_tokens",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_all_admin_endpoints_reject_missing_and_invalid_tokens",
+      "target": "backend_tests_test_admin_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
       "target": "backend_tests_test_admin_test_admin_stats_and_profiles_are_safe",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L45",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9552,7 +9871,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L45",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9562,7 +9881,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L57",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9573,7 +9892,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L57",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9583,7 +9902,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L68",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9594,7 +9913,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L68",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9604,7 +9923,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L79",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9615,7 +9934,49 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L79",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "target": "backend_tests_test_admin_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_admin_user_payload_validation_does_not_write",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_admin_user_payload_validation_does_not_write",
+      "target": "backend_tests_test_admin_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9675,13 +10036,24 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_admin_test_all_admin_endpoints_reject_missing_and_invalid_tokens",
+      "target": "backend_tests_test_admin_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_admin_test_admin_stats_and_profiles_are_safe",
       "target": "backend_tests_test_admin_build_client",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L46",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9692,56 +10064,12 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L48",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_admin_test_admin_stats_and_profiles_are_safe",
-      "target": "backend_tests_test_admin_login_admin",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_admin.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_admin_test_admin_create_normalizes_role_and_rejects_casefolded_conflict",
-      "target": "backend_tests_test_admin_build_client",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_admin.py",
-      "source_location": "L58",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_admin_test_admin_create_normalizes_role_and_rejects_casefolded_conflict",
-      "target": "backend_tests_test_admin_login_admin",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_admin.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
-      "target": "backend_tests_test_admin_build_client",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_admin.py",
-      "source_location": "L69",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
       "target": "backend_tests_test_admin_login_admin",
       "relation": "calls",
       "context": "call",
@@ -9752,18 +10080,7 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
-      "target": "backend_tests_test_admin_headers",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_admin.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_admin_test_removal_retains_posts_with_snapshots_and_null_author",
+      "source": "backend_tests_test_admin_test_admin_create_normalizes_role_and_rejects_casefolded_conflict",
       "target": "backend_tests_test_admin_build_client",
       "relation": "calls",
       "context": "call",
@@ -9774,13 +10091,68 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_admin_test_admin_create_normalizes_role_and_rejects_casefolded_conflict",
+      "target": "backend_tests_test_admin_login_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
+      "target": "backend_tests_test_admin_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
+      "target": "backend_tests_test_admin_login_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
+      "target": "backend_tests_test_admin_headers",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_removal_retains_posts_with_snapshots_and_null_author",
+      "target": "backend_tests_test_admin_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_admin_test_removal_retains_posts_with_snapshots_and_null_author",
       "target": "backend_tests_test_admin_register",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L82",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9791,7 +10163,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L83",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9802,7 +10174,62 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
-      "source_location": "L84",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "target": "backend_tests_test_admin_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "target": "backend_tests_test_admin_register",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "target": "backend_tests_test_admin_login_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_admin_user_payload_validation_does_not_write",
+      "target": "backend_tests_test_admin_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_admin_user_payload_validation_does_not_write",
+      "target": "backend_tests_test_admin_login_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L134",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9813,6 +10240,36 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_admin.py",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_47",
+      "target": "backend_tests_test_admin_test_all_admin_endpoints_reject_missing_and_invalid_tokens",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_116",
+      "target": "backend_tests_test_admin_test_missing_user_delete_returns_not_found_envelope_without_state_change",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_130",
+      "target": "backend_tests_test_admin_test_admin_user_payload_validation_does_not_write",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9976,6 +10433,27 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_auth",
+      "target": "backend_tests_test_auth_test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write",
+      "target": "backend_tests_test_auth_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_auth_build_client",
       "target": "backend_tests_test_auth_py_testclient",
       "relation": "calls",
@@ -10075,6 +10553,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_auth_test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write",
+      "target": "backend_tests_test_auth_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_auth_rationale_1",
       "target": "backend_tests_test_auth",
       "relation": "rationale_for",
@@ -10141,6 +10630,16 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth.py",
       "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_auth_rationale_104",
+      "target": "backend_tests_test_auth_test_auth_missing_wrong_type_and_malformed_json_requests_do_not_write",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10232,7 +10731,7 @@
     },
     {
       "source": "backend_tests_test_health",
-      "target": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "target": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
@@ -10241,7 +10740,7 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "source": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
       "target": "backend_tests_test_health_py_path",
       "relation": "references",
       "context": "parameter_type",
@@ -10253,11 +10752,32 @@
     },
     {
       "source": "backend_tests_test_health",
+      "target": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "target": "backend_tests_test_health_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_health",
       "target": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L48",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10268,7 +10788,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L48",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10304,7 +10824,7 @@
     },
     {
       "source": "backend_tests_test_health_rationale_39",
-      "target": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "target": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
@@ -10313,12 +10833,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_health_rationale_49",
+      "source": "backend_tests_test_health_rationale_62",
+      "target": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_health_rationale_72",
       "target": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L49",
+      "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10329,7 +10859,18 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L7",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_db_models",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10340,7 +10881,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10350,7 +10891,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10361,7 +10902,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10372,7 +10913,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10382,7 +10923,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10392,7 +10933,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10403,7 +10944,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10413,7 +10954,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L37",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10424,7 +10965,28 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L37",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "target": "backend_tests_test_integration_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10435,7 +10997,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10446,7 +11008,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10457,7 +11019,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10468,7 +11030,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10479,7 +11041,29 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L42",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "target": "backend_tests_test_integration_py_testclient",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "target": "backend_tests_test_integration_auth",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10490,6 +11074,16 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_rationale_52",
+      "target": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10637,7 +11231,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L81",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10648,7 +11242,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L81",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10658,7 +11252,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L99",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10669,7 +11263,49 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L99",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts",
+      "target": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "target": "backend_tests_test_posts_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts",
+      "target": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "target": "backend_tests_test_posts_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L143",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10679,7 +11315,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L115",
+      "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10690,7 +11326,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L115",
+      "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10756,7 +11392,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L84",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10767,7 +11403,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L86",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10778,35 +11414,13 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L94",
+      "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
       "target": "backend_tests_test_posts_build_client",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_posts.py",
-      "source_location": "L102",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
-      "target": "backend_tests_test_posts_register",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_posts.py",
-      "source_location": "L104",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
-      "target": "backend_tests_test_posts_auth",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -10816,13 +11430,101 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
+      "target": "backend_tests_test_posts_register",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
+      "target": "backend_tests_test_posts_auth",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "target": "backend_tests_test_posts_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "target": "backend_tests_test_posts_register",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "target": "backend_tests_test_posts_auth",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "target": "backend_tests_test_posts_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "target": "backend_tests_test_posts_register",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "target": "backend_tests_test_posts_auth",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_posts_test_default_admin_can_override_post_ownership",
       "target": "backend_tests_test_posts_build_client",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L118",
+      "source_location": "L163",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10833,7 +11535,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L120",
+      "source_location": "L165",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10844,7 +11546,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L121",
+      "source_location": "L166",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10909,32 +11611,52 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_posts_rationale_82",
+      "source": "backend_tests_test_posts_rationale_86",
       "target": "backend_tests_test_posts_test_invalid_payloads_do_not_write_or_accept_server_owned_fields",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L82",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_posts_rationale_100",
+      "source": "backend_tests_test_posts_rationale_104",
       "target": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L100",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_posts_rationale_116",
+      "source": "backend_tests_test_posts_rationale_120",
+      "target": "backend_tests_test_posts_test_post_invalid_types_malformed_json_and_uuid_do_not_change_database",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_rationale_144",
+      "target": "backend_tests_test_posts_test_xss_and_sql_like_text_is_persisted_as_plain_text_and_returned_without_execution",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_posts.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_posts_rationale_161",
       "target": "backend_tests_test_posts_test_default_admin_can_override_post_ownership",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_posts.py",
-      "source_location": "L116",
+      "source_location": "L161",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11078,6 +11800,27 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_public",
+      "target": "backend_tests_test_public_test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_public.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_public_test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope",
+      "target": "backend_tests_test_public_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_public.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_public_build_client",
       "target": "backend_tests_test_public_py_testclient",
       "relation": "calls",
@@ -11133,6 +11876,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_public_test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope",
+      "target": "backend_tests_test_public_build_client",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_public.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_public_rationale_1",
       "target": "backend_tests_test_public",
       "relation": "rationale_for",
@@ -11183,12 +11937,54 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_public_rationale_101",
+      "target": "backend_tests_test_public_test_public_posts_rejects_invalid_limit_with_sanitized_validation_envelope",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_public.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "e2e_admin_spec",
       "target": "e2e_admin_spec_test_expect",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "e2e/admin.spec.js",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_admin_spec",
+      "target": "e2e_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/admin.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_admin_spec",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/admin.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_admin_spec",
+      "target": "e2e_admin_spec_capturebrowsererrors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/admin.spec.js",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11203,12 +11999,76 @@
       "_origin": "ast"
     },
     {
+      "source": "e2e_discovery_spec",
+      "target": "e2e_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/discovery.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_discovery_spec",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/discovery.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_discovery_spec",
+      "target": "e2e_discovery_spec_capturebrowsererrors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/discovery.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "e2e_foundation_spec",
       "target": "e2e_foundation_spec_test_expect",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "e2e/foundation.spec.js",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_foundation_spec",
+      "target": "e2e_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/foundation.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_foundation_spec",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/foundation.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_foundation_spec",
+      "target": "e2e_foundation_spec_capturebrowsererrors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/foundation.spec.js",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11223,12 +12083,150 @@
       "_origin": "ast"
     },
     {
+      "source": "e2e_identity_spec",
+      "target": "e2e_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/identity.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_identity_spec",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/identity.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_identity_spec",
+      "target": "e2e_support_registerwriter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/identity.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_identity_spec",
+      "target": "e2e_identity_spec_capturebrowsererrors_registerwriter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/identity.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "e2e_posts_spec",
       "target": "e2e_posts_spec_test_expect",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "e2e/posts.spec.js",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_posts_spec",
+      "target": "e2e_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/posts.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_posts_spec",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/posts.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_posts_spec",
+      "target": "e2e_support_registerwriter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/posts.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_posts_spec",
+      "target": "e2e_posts_spec_capturebrowsererrors_registerwriter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/posts.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_support",
+      "target": "e2e_support_expect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/support.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_support",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/support.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_support",
+      "target": "e2e_support_registerwriter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/support.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_support",
+      "target": "e2e_support_capturebrowsererrors",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "source_file": "e2e/support.js",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_support",
+      "target": "e2e_support_registerwriter",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "source_file": "e2e/support.js",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11913,7 +12911,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_auth_authpage",
+      "target": "frontend_src_features_admin_adminpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11924,7 +12922,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_admin_adminpage",
+      "target": "frontend_src_features_auth_authpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11946,7 +12944,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_posts_postspage",
+      "target": "frontend_src_features_posts_postdetailpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11957,7 +12955,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_posts_postdetailpage",
+      "target": "frontend_src_features_posts_posteditor",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11968,7 +12966,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_posts_posteditor",
+      "target": "frontend_src_features_posts_postspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11993,7 +12991,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12003,7 +13001,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L43",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12236,7 +13234,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/features/admin/AdminPage.jsx",
-      "source_location": "L113",
+      "source_location": "L161",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12295,11 +13293,21 @@
     },
     {
       "source": "frontend_src_features_auth_authpage_test",
-      "target": "frontend_src_features_auth_authpage_test_renderpage",
+      "target": "frontend_src_features_auth_authpage_test_locationdisplay",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/features/auth/AuthPage.test.jsx",
       "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_features_auth_authpage_test",
+      "target": "frontend_src_features_auth_authpage_test_renderpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/features/auth/AuthPage.test.jsx",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12627,11 +13635,32 @@
     },
     {
       "source": "frontend_src_features_posts_posts_test",
+      "target": "frontend_src_features_posts_postspage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/features/posts/posts.test.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_features_posts_posts_test",
       "target": "frontend_src_features_posts_posts_test_mocks",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
-      "source_location": "L10",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_features_posts_posts_test",
+      "target": "frontend_src_features_posts_posts_test_locationdisplay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/features/posts/posts.test.jsx",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12641,7 +13670,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
-      "source_location": "L18",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_features_posts_posts_test",
+      "target": "frontend_src_features_posts_posts_test_renderpostspage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/features/posts/posts.test.jsx",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12651,7 +13690,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
-      "source_location": "L22",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12733,7 +13772,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_auth_authpage_authpage",
+      "target": "frontend_src_features_admin_adminpage_adminpage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12744,7 +13783,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_admin_adminpage_adminpage",
+      "target": "frontend_src_features_auth_authpage_authpage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12766,7 +13805,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_posts_postspage_postspage",
+      "target": "frontend_src_features_posts_postdetailpage_postdetailpage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12777,7 +13816,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_posts_postdetailpage_postdetailpage",
+      "target": "frontend_src_features_posts_posteditor_posteditor",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12788,7 +13827,7 @@
     },
     {
       "source": "frontend_src_app",
-      "target": "frontend_src_features_posts_posteditor_posteditor",
+      "target": "frontend_src_features_posts_postspage_postspage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12871,6 +13910,17 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/features/posts/posts.test.jsx",
       "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_features_posts_posts_test",
+      "target": "frontend_src_features_posts_postspage_postspage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/features/posts/posts.test.jsx",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13816,7 +14866,29 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L7",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_db_models_post",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_app_db_models_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13827,7 +14899,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13926,7 +14998,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14151,8 +15223,8 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
-      "target": "backend_app_db_session_create_database_engine",
+      "source": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
+      "target": "backend_app_main_create_app",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -14162,18 +15234,29 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
+      "source": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
+      "target": "backend_app_core_config_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
       "target": "backend_app_db_session_create_database_engine",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L51",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
+      "source": "backend_tests_test_health_test_health_returns_sanitized_503_when_real_probe_database_is_unavailable",
       "target": "backend_app_db_session_create_session_factory",
       "relation": "calls",
       "context": "call",
@@ -14184,13 +15267,46 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled",
+      "target": "backend_app_db_session_create_database_engine",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
+      "target": "backend_app_db_session_create_database_engine",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
+      "target": "backend_app_db_session_create_session_factory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_health.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_health_test_bootstrap_is_idempotent_and_seeds_hashed_admin",
       "target": "backend_app_db_bootstrap_bootstrap_database",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_health.py",
-      "source_location": "L54",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14201,7 +15317,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14212,7 +15328,29 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L12",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "target": "backend_app_main_create_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_three_router_removal_chain_retains_post_and_direct_database_state",
+      "target": "backend_app_core_config_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15007,7 +16145,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/posts/PostDetailPage.jsx",
-      "source_location": "L35",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15043,7 +16181,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/posts/PostEditor.jsx",
-      "source_location": "L40",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15055,7 +16193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/posts/PostEditor.jsx",
-      "source_location": "L40",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15091,7 +16229,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L128",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15103,9 +16241,48 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/services/posts.py",
-      "source_location": "L147",
+      "source_location": "L158",
       "weight": 1.0,
       "_origin": "ast"
+    },
+    {
+      "source": "backend_app_api_admin_get_user_service",
+      "target": "backend_app_api_admin_get_stats",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/admin.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_admin_get_stats",
+      "_tgt": "backend_app_api_admin_get_user_service"
+    },
+    {
+      "source": "backend_app_api_admin_py_depends",
+      "target": "backend_app_api_admin_get_stats",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/admin.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_admin_get_stats",
+      "_tgt": "backend_app_api_admin_py_depends"
+    },
+    {
+      "source": "backend_app_api_admin_py_get",
+      "target": "backend_app_api_admin_get_stats",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/admin.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_admin_get_stats",
+      "_tgt": "backend_app_api_admin_py_get"
     },
     {
       "source": "backend_app_api_auth_get_auth_service",
@@ -15195,8 +16372,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_api_auth_register",
-      "_tgt": "backend_app_api_auth_py_post"
+      "_src": "backend_app_api_auth_py_post",
+      "_tgt": "backend_app_api_auth_register"
     },
     {
       "source": "backend_app_api_auth_py_get",
@@ -15226,6 +16403,19 @@
     },
     {
       "source": "backend_app_api_dependencies_get_db_session",
+      "target": "backend_app_api_posts_get_post_service",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/posts.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_dependencies_get_db_session",
+      "_tgt": "backend_app_api_posts_get_post_service"
+    },
+    {
+      "source": "backend_app_api_dependencies_get_db_session",
       "target": "backend_app_api_public_get_post_service",
       "relation": "references",
       "context": "generic_arg",
@@ -15239,15 +16429,15 @@
     },
     {
       "source": "backend_app_api_dependencies_get_db_session",
-      "target": "backend_app_api_posts_get_post_service",
+      "target": "backend_app_api_users_get_user_service",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
-      "source_file": "backend/app/api/posts.py",
-      "source_location": "L17",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_api_posts_get_post_service",
+      "_src": "backend_app_api_users_get_user_service",
       "_tgt": "backend_app_api_dependencies_get_db_session"
     },
     {
@@ -15273,8 +16463,8 @@
       "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_api_posts_create_post",
-      "_tgt": "backend_app_api_dependencies_get_current_user"
+      "_src": "backend_app_api_dependencies_get_current_user",
+      "_tgt": "backend_app_api_posts_create_post"
     },
     {
       "source": "backend_app_api_dependencies_get_current_user",
@@ -15286,8 +16476,8 @@
       "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_api_posts_delete_post",
-      "_tgt": "backend_app_api_dependencies_get_current_user"
+      "_src": "backend_app_api_dependencies_get_current_user",
+      "_tgt": "backend_app_api_posts_delete_post"
     },
     {
       "source": "backend_app_api_dependencies_get_current_user",
@@ -15299,8 +16489,73 @@
       "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_api_posts_update_post",
+      "_src": "backend_app_api_dependencies_get_current_user",
+      "_tgt": "backend_app_api_posts_update_post"
+    },
+    {
+      "source": "backend_app_api_dependencies_get_current_user",
+      "target": "backend_app_api_dependencies_require_admin",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/dependencies.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_dependencies_require_admin",
       "_tgt": "backend_app_api_dependencies_get_current_user"
+    },
+    {
+      "source": "backend_app_api_dependencies_py_depends",
+      "target": "backend_app_api_dependencies_require_admin",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/dependencies.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_dependencies_require_admin",
+      "_tgt": "backend_app_api_dependencies_py_depends"
+    },
+    {
+      "source": "backend_app_api_dependencies_require_admin",
+      "target": "backend_app_api_users_create_user",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_create_user",
+      "_tgt": "backend_app_api_dependencies_require_admin"
+    },
+    {
+      "source": "backend_app_api_dependencies_require_admin",
+      "target": "backend_app_api_users_delete_user",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_delete_user",
+      "_tgt": "backend_app_api_dependencies_require_admin"
+    },
+    {
+      "source": "backend_app_api_dependencies_require_admin",
+      "target": "backend_app_api_users_list_users",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_list_users",
+      "_tgt": "backend_app_api_dependencies_require_admin"
     },
     {
       "source": "backend_app_api_health_healthresponse",
@@ -15365,8 +16620,8 @@
       "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_api_posts_update_post",
-      "_tgt": "backend_app_api_posts_get_post_service"
+      "_src": "backend_app_api_posts_get_post_service",
+      "_tgt": "backend_app_api_posts_update_post"
     },
     {
       "source": "backend_app_api_posts_py_depends",
@@ -15404,8 +16659,8 @@
       "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_api_posts_update_post",
-      "_tgt": "backend_app_api_posts_py_depends"
+      "_src": "backend_app_api_posts_py_depends",
+      "_tgt": "backend_app_api_posts_update_post"
     },
     {
       "source": "backend_app_api_posts_py_get",
@@ -15434,6 +16689,32 @@
       "_tgt": "backend_app_api_posts_py_get"
     },
     {
+      "source": "backend_app_api_posts_py_uuid",
+      "target": "backend_app_api_posts_delete_post",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/posts.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_posts_delete_post",
+      "_tgt": "backend_app_api_posts_py_uuid"
+    },
+    {
+      "source": "backend_app_api_posts_py_uuid",
+      "target": "backend_app_api_posts_update_post",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/posts.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_posts_update_post",
+      "_tgt": "backend_app_api_posts_py_uuid"
+    },
+    {
       "source": "backend_app_api_posts_py_post",
       "target": "backend_app_api_posts_create_post",
       "relation": "references",
@@ -15460,6 +16741,19 @@
       "_tgt": "put"
     },
     {
+      "source": "backend_app_api_posts_py_delete",
+      "target": "backend_app_api_posts_delete_post",
+      "relation": "references",
+      "context": "decorator",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/posts.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_posts_delete_post",
+      "_tgt": "backend_app_api_posts_py_delete"
+    },
+    {
       "source": "backend_app_api_public_py_get",
       "target": "backend_app_api_public_list_public_posts",
       "relation": "references",
@@ -15471,6 +16765,123 @@
       "_origin": "ast",
       "_src": "backend_app_api_public_list_public_posts",
       "_tgt": "backend_app_api_public_py_get"
+    },
+    {
+      "source": "backend_app_api_users_get_user_service",
+      "target": "backend_app_api_users_create_user",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_create_user",
+      "_tgt": "backend_app_api_users_get_user_service"
+    },
+    {
+      "source": "backend_app_api_users_get_user_service",
+      "target": "backend_app_api_users_delete_user",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_delete_user",
+      "_tgt": "backend_app_api_users_get_user_service"
+    },
+    {
+      "source": "backend_app_api_users_get_user_service",
+      "target": "backend_app_api_users_list_users",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_list_users",
+      "_tgt": "backend_app_api_users_get_user_service"
+    },
+    {
+      "source": "backend_app_api_users_py_depends",
+      "target": "backend_app_api_users_create_user",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_create_user",
+      "_tgt": "backend_app_api_users_py_depends"
+    },
+    {
+      "source": "backend_app_api_users_py_depends",
+      "target": "backend_app_api_users_delete_user",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_delete_user",
+      "_tgt": "backend_app_api_users_py_depends"
+    },
+    {
+      "source": "backend_app_api_users_py_depends",
+      "target": "backend_app_api_users_list_users",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_users_list_users",
+      "_tgt": "backend_app_api_users_py_depends"
+    },
+    {
+      "source": "backend_app_api_users_py_get",
+      "target": "backend_app_api_users_list_users",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_users_list_users",
+      "_tgt": "backend_app_api_users_py_get"
+    },
+    {
+      "source": "backend_app_api_users_py_post",
+      "target": "backend_app_api_users_create_user",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_users_create_user",
+      "_tgt": "backend_app_api_users_py_post"
+    },
+    {
+      "source": "backend_app_api_users_py_delete",
+      "target": "backend_app_api_users_delete_user",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/users.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_users_delete_user",
+      "_tgt": "backend_app_api_users_py_delete"
     },
     {
       "source": "backend_app_core_config_settings",
@@ -15501,6 +16912,19 @@
     },
     {
       "source": "backend_app_db_models_user",
+      "target": "backend_app_policies_postpolicy_can_mutate",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/policies.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_db_models_user",
+      "_tgt": "backend_app_policies_postpolicy_can_mutate"
+    },
+    {
+      "source": "backend_app_db_models_user",
       "target": "backend_app_services_auth_authservice_response_for",
       "relation": "references",
       "context": "parameter_type",
@@ -15527,19 +16951,6 @@
     },
     {
       "source": "backend_app_db_models_user",
-      "target": "backend_app_policies_postpolicy_can_mutate",
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/policies.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "_src": "backend_app_policies_postpolicy_can_mutate",
-      "_tgt": "backend_app_db_models_user"
-    },
-    {
-      "source": "backend_app_db_models_user",
       "target": "backend_app_services_posts_postservice_create",
       "relation": "references",
       "context": "parameter_type",
@@ -15548,8 +16959,8 @@
       "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_create",
-      "_tgt": "backend_app_db_models_user"
+      "_src": "backend_app_db_models_user",
+      "_tgt": "backend_app_services_posts_postservice_create"
     },
     {
       "source": "backend_app_db_models_user",
@@ -15561,8 +16972,8 @@
       "source_location": "L141",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_delete",
-      "_tgt": "backend_app_db_models_user"
+      "_src": "backend_app_db_models_user",
+      "_tgt": "backend_app_services_posts_postservice_delete"
     },
     {
       "source": "backend_app_db_models_user",
@@ -15574,7 +16985,20 @@
       "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_update",
+      "_src": "backend_app_db_models_user",
+      "_tgt": "backend_app_services_posts_postservice_update"
+    },
+    {
+      "source": "backend_app_db_models_user",
+      "target": "backend_app_services_users_userservice_remove",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/users.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_users_userservice_remove",
       "_tgt": "backend_app_db_models_user"
     },
     {
@@ -15587,8 +17011,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_policies_postpolicy_can_mutate",
-      "_tgt": "backend_app_db_models_post"
+      "_src": "backend_app_db_models_post",
+      "_tgt": "backend_app_policies_postpolicy_can_mutate"
     },
     {
       "source": "backend_app_db_models_post",
@@ -15600,8 +17024,8 @@
       "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_get",
-      "_tgt": "backend_app_db_models_post"
+      "_src": "backend_app_db_models_post",
+      "_tgt": "backend_app_services_posts_postservice_get"
     },
     {
       "source": "backend_app_db_models_post",
@@ -15613,8 +17037,8 @@
       "source_location": "L83",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_to_detail",
-      "_tgt": "backend_app_db_models_post"
+      "_src": "backend_app_db_models_post",
+      "_tgt": "backend_app_services_posts_postservice_to_detail"
     },
     {
       "source": "backend_app_db_models_post",
@@ -15626,8 +17050,8 @@
       "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_to_summary",
-      "_tgt": "backend_app_db_models_post"
+      "_src": "backend_app_db_models_post",
+      "_tgt": "backend_app_services_posts_postservice_to_summary"
     },
     {
       "source": "backend_app_db_session_py_engine",
@@ -15675,7 +17099,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "_src": "backend_app_main_create_app",
@@ -15704,8 +17128,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_schemas_auth_registerrequest_validate_username",
-      "_tgt": "backend_app_schemas_auth_py_field_validator"
+      "_src": "backend_app_schemas_auth_py_field_validator",
+      "_tgt": "backend_app_schemas_auth_registerrequest_validate_username"
     },
     {
       "source": "backend_app_schemas_auth_loginrequest",
@@ -15731,6 +17155,32 @@
       "weight": 1.0,
       "_origin": "ast",
       "_src": "backend_app_services_auth_to_safe_profile",
+      "_tgt": "backend_app_schemas_auth_safeprofile"
+    },
+    {
+      "source": "backend_app_schemas_auth_safeprofile",
+      "target": "backend_app_services_users_userservice_create",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/users.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_users_userservice_create",
+      "_tgt": "backend_app_schemas_auth_safeprofile"
+    },
+    {
+      "source": "backend_app_schemas_auth_safeprofile",
+      "target": "backend_app_services_users_userservice_list_profiles",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/users.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_users_userservice_list_profiles",
       "_tgt": "backend_app_schemas_auth_safeprofile"
     },
     {
@@ -15782,8 +17232,8 @@
       "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_create",
-      "_tgt": "backend_app_schemas_posts_postwriterequest"
+      "_src": "backend_app_schemas_posts_postwriterequest",
+      "_tgt": "backend_app_services_posts_postservice_create"
     },
     {
       "source": "backend_app_schemas_posts_postwriterequest",
@@ -15795,8 +17245,8 @@
       "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_update",
-      "_tgt": "backend_app_schemas_posts_postwriterequest"
+      "_src": "backend_app_schemas_posts_postwriterequest",
+      "_tgt": "backend_app_services_posts_postservice_update"
     },
     {
       "source": "backend_app_schemas_posts_py_field_validator",
@@ -15821,8 +17271,8 @@
       "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_list_summaries",
-      "_tgt": "backend_app_schemas_posts_postsummary"
+      "_src": "backend_app_schemas_posts_postsummary",
+      "_tgt": "backend_app_services_posts_postservice_list_summaries"
     },
     {
       "source": "backend_app_schemas_posts_postsummary",
@@ -15847,8 +17297,8 @@
       "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_create",
-      "_tgt": "backend_app_schemas_posts_postdetail"
+      "_src": "backend_app_schemas_posts_postdetail",
+      "_tgt": "backend_app_services_posts_postservice_create"
     },
     {
       "source": "backend_app_schemas_posts_postdetail",
@@ -15873,8 +17323,8 @@
       "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_posts_postservice_update",
-      "_tgt": "backend_app_schemas_posts_postdetail"
+      "_src": "backend_app_schemas_posts_postdetail",
+      "_tgt": "backend_app_services_posts_postservice_update"
     },
     {
       "source": "backend_app_schemas_posts_publicpostsummary",
@@ -15888,6 +17338,136 @@
       "_origin": "ast",
       "_src": "backend_app_services_posts_postservice_list_public",
       "_tgt": "backend_app_schemas_posts_publicpostsummary"
+    },
+    {
+      "source": "backend_app_schemas_users_admincreateuser",
+      "target": "backend_app_services_users_userservice_create",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/users.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_users_userservice_create",
+      "_tgt": "backend_app_schemas_users_admincreateuser"
+    },
+    {
+      "source": "backend_app_schemas_users_py_field_validator",
+      "target": "backend_app_schemas_users_admincreateuser_normalize_role",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/users.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_schemas_users_admincreateuser_normalize_role",
+      "_tgt": "backend_app_schemas_users_py_field_validator"
+    },
+    {
+      "source": "backend_app_schemas_users_adminstats",
+      "target": "backend_app_services_users_userservice_stats",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/users.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_users_userservice_stats",
+      "_tgt": "backend_app_schemas_users_adminstats"
+    },
+    {
+      "source": "backend_tests_test_admin_py_path",
+      "target": "backend_tests_test_admin_test_admin_create_normalizes_role_and_rejects_casefolded_conflict",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_test_admin_create_normalizes_role_and_rejects_casefolded_conflict",
+      "_tgt": "backend_tests_test_admin_py_path"
+    },
+    {
+      "source": "backend_tests_test_admin_py_path",
+      "target": "backend_tests_test_admin_test_admin_stats_and_profiles_are_safe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_test_admin_stats_and_profiles_are_safe",
+      "_tgt": "backend_tests_test_admin_py_path"
+    },
+    {
+      "source": "backend_tests_test_admin_py_path",
+      "target": "backend_tests_test_admin_test_non_admin_is_forbidden_from_all_governance_routes",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_test_non_admin_is_forbidden_from_all_governance_routes",
+      "_tgt": "backend_tests_test_admin_py_path"
+    },
+    {
+      "source": "backend_tests_test_admin_py_path",
+      "target": "backend_tests_test_admin_test_removal_retains_posts_with_snapshots_and_null_author",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_test_removal_retains_posts_with_snapshots_and_null_author",
+      "_tgt": "backend_tests_test_admin_py_path"
+    },
+    {
+      "source": "backend_tests_test_admin_py_path",
+      "target": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_test_self_and_default_administrator_deletion_are_protected",
+      "_tgt": "backend_tests_test_admin_py_path"
+    },
+    {
+      "source": "backend_tests_test_admin_py_testclient",
+      "target": "backend_tests_test_admin_login_admin",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_login_admin",
+      "_tgt": "backend_tests_test_admin_py_testclient"
+    },
+    {
+      "source": "backend_tests_test_admin_py_testclient",
+      "target": "backend_tests_test_admin_register",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_admin_register",
+      "_tgt": "backend_tests_test_admin_py_testclient"
     },
     {
       "source": "backend_tests_test_auth_py_path",
@@ -15968,6 +17548,32 @@
       "_tgt": "backend_tests_test_health_test_sqlite_foreign_keys_are_enabled"
     },
     {
+      "source": "backend_tests_test_integration_py_path",
+      "target": "backend_tests_test_integration_test_cross_user_post_mutation_is_denied",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_integration_test_cross_user_post_mutation_is_denied",
+      "_tgt": "backend_tests_test_integration_py_path"
+    },
+    {
+      "source": "backend_tests_test_integration_py_path",
+      "target": "backend_tests_test_integration_test_writer_post_admin_stats_list_remove_and_retained_read",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_tests_test_integration_test_writer_post_admin_stats_list_remove_and_retained_read",
+      "_tgt": "backend_tests_test_integration_py_path"
+    },
+    {
       "source": "backend_tests_test_posts_py_path",
       "target": "backend_tests_test_posts_test_default_admin_can_override_post_ownership",
       "relation": "references",
@@ -15977,8 +17583,8 @@
       "source_location": "L115",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_tests_test_posts_test_default_admin_can_override_post_ownership",
-      "_tgt": "backend_tests_test_posts_py_path"
+      "_src": "backend_tests_test_posts_py_path",
+      "_tgt": "backend_tests_test_posts_test_default_admin_can_override_post_ownership"
     },
     {
       "source": "backend_tests_test_posts_py_path",
@@ -15990,8 +17596,8 @@
       "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_tests_test_posts_test_invalid_payloads_do_not_write_or_accept_server_owned_fields",
-      "_tgt": "backend_tests_test_posts_py_path"
+      "_src": "backend_tests_test_posts_py_path",
+      "_tgt": "backend_tests_test_posts_test_invalid_payloads_do_not_write_or_accept_server_owned_fields"
     },
     {
       "source": "backend_tests_test_posts_py_path",
@@ -16003,8 +17609,8 @@
       "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change",
-      "_tgt": "backend_tests_test_posts_py_path"
+      "_src": "backend_tests_test_posts_py_path",
+      "_tgt": "backend_tests_test_posts_test_non_owner_mutation_is_forbidden_without_database_change"
     },
     {
       "source": "backend_tests_test_posts_py_path",
@@ -16016,8 +17622,8 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_tests_test_posts_test_posts_require_authentication",
-      "_tgt": "backend_tests_test_posts_py_path"
+      "_src": "backend_tests_test_posts_py_path",
+      "_tgt": "backend_tests_test_posts_test_posts_require_authentication"
     },
     {
       "source": "backend_tests_test_posts_py_path",
@@ -16029,8 +17635,8 @@
       "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_tests_test_posts_test_writer_can_create_read_update_and_delete_post",
-      "_tgt": "backend_tests_test_posts_py_path"
+      "_src": "backend_tests_test_posts_py_path",
+      "_tgt": "backend_tests_test_posts_test_writer_can_create_read_update_and_delete_post"
     },
     {
       "source": "backend_tests_test_posts_py_testclient",
@@ -16042,8 +17648,8 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_tests_test_posts_register",
-      "_tgt": "backend_tests_test_posts_py_testclient"
+      "_src": "backend_tests_test_posts_py_testclient",
+      "_tgt": "backend_tests_test_posts_register"
     },
     {
       "source": "backend_tests_test_public_py_path",
@@ -16073,10 +17679,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-09-18T11:48:59.797150+00:00",
+    "built_at": "2026-09-18T12:29:29.130374+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418092610531383\\developer",
     "force": true,
-    "files_scanned": 61
+    "files_scanned": 63
   }
 }
