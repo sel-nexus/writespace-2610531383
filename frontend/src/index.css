@@ -278,6 +278,139 @@ a:focus-visible {
   }
 }
 
+.posts-shell,
+.post-detail-shell,
+.editor-shell {
+  gap: 3rem;
+}
+
+.posts-nav,
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.posts-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 3rem;
+}
+
+.posts-heading h1,
+.editor-card h1,
+.post-detail h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+}
+
+.posts-heading h2 {
+  font-family: 'Fraunces', serif;
+}
+
+.post-detail,
+.editor-card {
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.post-content {
+  margin-top: 2.5rem;
+  color: #4f4035;
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.post-actions {
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.danger-button {
+  min-height: 2.8rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid #9d3925;
+  border-radius: 0.45rem;
+  background: transparent;
+  color: #9d3925;
+  font: inherit;
+  font-weight: 800;
+}
+
+.editor-card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid #d9c7b3;
+  border-radius: 0.5rem;
+  background: #fffaf3;
+}
+
+.post-form {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.post-form label {
+  margin-top: 0.8rem;
+  color: #4f4035;
+  font-weight: 800;
+}
+
+.post-form input,
+.post-form textarea {
+  width: 100%;
+  border: 1px solid #cdbba6;
+  border-radius: 0.4rem;
+  background: #fffdf9;
+  color: #30251e;
+  font: inherit;
+  padding: 0.8rem;
+}
+
+.post-form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+  outline: 3px solid #b78b40;
+  outline-offset: 2px;
+}
+
+.field-error {
+  margin: 0;
+  color: #9d3925;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgb(48 37 30 / 42%);
+}
+
+.confirm-dialog {
+  width: min(420px, 100%);
+  padding: 2rem;
+  border: 1px solid #d9c7b3;
+  border-radius: 0.5rem;
+  background: #fffaf3;
+  box-shadow: 0 16px 42px rgb(48 37 30 / 20%);
+}
+
+.confirm-dialog h2 {
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+}
+
 @media (max-width: 560px) {
   .page-shell {
     padding-inline: 1.25rem;

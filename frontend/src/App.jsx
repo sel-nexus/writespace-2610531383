@@ -4,6 +4,9 @@ import { AuthProvider, useAuth } from './auth/AuthContext.jsx';
 import ProtectedRoute from './auth/ProtectedRoute.jsx';
 import AuthPage from './features/auth/AuthPage.jsx';
 import LandingPage from './features/discovery/LandingPage.jsx';
+import PostsPage from './features/posts/PostsPage.jsx';
+import PostDetailPage from './features/posts/PostDetailPage.jsx';
+import PostEditor from './features/posts/PostEditor.jsx';
 
 /** Render an intentionally small protected dashboard placeholder. */
 function DashboardPage() {
@@ -32,7 +35,10 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<AuthPage mode="login" />} />
           <Route path="/register" element={<AuthPage mode="register" />} />
-          <Route path="/blogs" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+          <Route path="/blogs" element={<ProtectedRoute><PostsPage /></ProtectedRoute>} />
+          <Route path="/blog/:id" element={<ProtectedRoute><PostDetailPage /></ProtectedRoute>} />
+          <Route path="/posts/new" element={<ProtectedRoute><PostEditor /></ProtectedRoute>} />
+          <Route path="/posts/:id/edit" element={<ProtectedRoute><PostEditor /></ProtectedRoute>} />
           <Route path="/admin" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         </Routes>
       </AuthProvider>

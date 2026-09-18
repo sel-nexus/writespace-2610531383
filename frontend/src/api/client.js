@@ -71,3 +71,39 @@ export function getHealth() {
 export function getPublicPosts(limit = 3) {
   return requestJson(`/api/public/posts?limit=${encodeURIComponent(limit)}`);
 }
+
+/** Read authenticated newest-first post summaries. */
+export function getPosts(token, limit = 5) {
+  return requestJson(`/api/posts?limit=${encodeURIComponent(limit)}`, { token });
+}
+
+/** Read an authenticated full post. */
+export function getPost(id, token) {
+  return requestJson(`/api/posts/${encodeURIComponent(id)}`, { token });
+}
+
+/** Create a plain-text post using the active bearer token. */
+export function createPost(post, token) {
+  return requestJson('/api/posts', { method: 'POST', body: post, token });
+}
+
+/** Update a plain-text post using the active bearer token. */
+export function updatePost(id, post, token) {
+  return requestJson(`/api/posts/${encodeURIComponent(id)}`, { method: 'PUT', body: post, token });
+}
+
+/** Delete a post using the active bearer token. */
+export async function deletePost(id, token) {
+  const baseUrl = import.meta.env.VITE_API_URL ?? '';
+  let response;
+  try {
+    response = await fetch(`${baseUrl}/api/posts/${encodeURIComponent(id)}`, { headers: { Accept: 'application/json', Authorization: `Bearer ${token}` }, method: 'DELETE' });
+  } catch {
+    throw new ApiError('Unable to reach WriteSpace.', 0);
+  }
+  if (!response.ok) {
+    const payload = await response.json().catch(() => ({}));
+    const envelope = typeof payload.error === 'object' && payload.error ? payload.error : null;
+    throw new ApiError(envelope?.message || 'Request failed.', response.status);
+  }
+}
