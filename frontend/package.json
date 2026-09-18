@@ -1,0 +1,23 @@
+{
+  "name": "writespace-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "test": "node node_modules/vitest/vitest.mjs run"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "prop-types": "15.8.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "vite": "5.4.11"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "jsdom": "25.0.1",
+    "vitest": "2.1.8"
+  }
+}
