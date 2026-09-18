@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, String, Text
+from sqlalchemy import Boolean, DateTime, ForeignKey, Index, String, Text
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
@@ -27,12 +27,17 @@ class User(Base):
 
 
 class Post(Base):
-    """Represent a future plain-text publication owned by an account."""
+    """Represent a durable plain-text publication with retained attribution."""
 
     __tablename__ = "posts"
+    __table_args__ = (Index("ix_posts_created_at", "created_at"), Index("ix_posts_author_id", "author_id"))
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True)
     title: Mapped[str] = mapped_column(String(200), nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
-    author_id: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
-    author: Mapped[User] = relationship(back_populates="posts", lazy="selectin")
+    author_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
+    author_name_snapshot: Mapped[str] = mapped_column(String(100), nullable=False)
+    author_role_snapshot: Mapped[str] = mapped_column(String(16), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    author: Mapped["User"] = relationship(back_populates="posts", lazy="selectin")

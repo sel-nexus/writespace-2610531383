@@ -61,3 +61,13 @@ export async function requestJson(path, options = {}) {
 export function getHealth() {
   return requestJson('/api/health');
 }
+
+/**
+ * Read a bounded set of anonymous-safe public post summaries.
+ *
+ * @param {number} [limit=3] Number of summaries requested from the public feed.
+ * @returns {Promise<Array<{id: string, title: string, excerpt: string, created_at: string}>>} Safe post previews.
+ */
+export function getPublicPosts(limit = 3) {
+  return requestJson(`/api/public/posts?limit=${encodeURIComponent(limit)}`);
+}
