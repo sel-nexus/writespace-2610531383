@@ -25,12 +25,19 @@ export class ApiError extends Error {
  */
 export async function requestJson(path, options = {}) {
   const baseUrl = import.meta.env.VITE_API_URL ?? '';
+  const { token, body, headers, ...requestOptions } = options;
   let response;
 
   try {
     response = await fetch(`${baseUrl}${path}`, {
-      headers: { Accept: 'application/json', ...options.headers },
-      ...options,
+      ...requestOptions,
+      headers: {
+        Accept: 'application/json',
+        ...(body ? { 'Content-Type': 'application/json' } : {}),
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers,
+      },
+      ...(body ? { body: JSON.stringify(body) } : {}),
     });
   } catch {
     throw new ApiError('Unable to reach WriteSpace.', 0);
@@ -38,7 +45,8 @@ export async function requestJson(path, options = {}) {
 
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
-    const message = typeof payload.error === 'string' ? payload.error : 'Request failed.';
+    const envelope = typeof payload.error === 'object' && payload.error ? payload.error : null;
+    const message = envelope?.message || (typeof payload.error === 'string' ? payload.error : 'Request failed.');
     throw new ApiError(message, response.status);
   }
 

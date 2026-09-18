@@ -16,6 +16,8 @@ class Settings:
 
     database_url: str
     cors_origins: tuple[str, ...]
+    jwt_secret: str = "dev-secret-change-in-production"
+    jwt_expires_minutes: int = 60
 
 
 def default_database_url() -> str:
@@ -44,7 +46,12 @@ def get_settings() -> Settings:
         raise ValueError("DATABASE_URL must reference a file-backed database")
 
     origins = os.getenv("CORS_ORIGINS", "http://localhost:5173")
+    jwt_secret = os.getenv("JWT_SECRET", "dev-secret-change-in-production")
+    if not jwt_secret:
+        raise ValueError("JWT_SECRET must not be empty")
     return Settings(
         database_url=database_url,
         cors_origins=tuple(origin.strip() for origin in origins.split(",") if origin.strip()),
+        jwt_secret=jwt_secret,
+        jwt_expires_minutes=int(os.getenv("JWT_EXPIRES_MINUTES", "60")),
     )

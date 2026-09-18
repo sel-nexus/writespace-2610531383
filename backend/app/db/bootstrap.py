@@ -1,10 +1,13 @@
 """Initialize durable schema and the default WriteSpace administrator."""
 
-import bcrypt
-from sqlalchemy import Engine, select
+from datetime import UTC, datetime
+from uuid import uuid4
+
+from sqlalchemy import Engine, func, select
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.db.models import Base, User
+from app.security.passwords import hash_password
 
 DEFAULT_ADMIN_USERNAME = "admin"
 DEFAULT_ADMIN_PASSWORD = "admin"
@@ -21,16 +24,18 @@ def bootstrap_database(engine: Engine, session_factory: sessionmaker[Session]) -
     Base.metadata.create_all(bind=engine)
     with session_factory.begin() as session:
         existing_admin = session.scalar(
-            select(User).where(User.username == DEFAULT_ADMIN_USERNAME)
+            select(User).where(func.lower(User.username) == DEFAULT_ADMIN_USERNAME)
         )
         if existing_admin is None:
-            password_hash = bcrypt.hashpw(
-                DEFAULT_ADMIN_PASSWORD.encode("utf-8"), bcrypt.gensalt()
-            ).decode("utf-8")
             session.add(
                 User(
+                    id=str(uuid4()),
+                    display_name="WriteSpace Administrator",
                     username=DEFAULT_ADMIN_USERNAME,
-                    password_hash=password_hash,
+                    password_hash=hash_password(DEFAULT_ADMIN_PASSWORD),
                     role="admin",
+                    is_default_admin=True,
+                    is_active=True,
+                    created_at=datetime.now(UTC),
                 )
             )
